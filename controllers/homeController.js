@@ -1,8 +1,8 @@
 "use strict"
 const { Op } = require("sequelize");
-const {User, Course, User_Course, UserIdentity} = require("../models")
+const {User, Course, UserCourse, UserProfile} = require("../models")
 const convertToRupiah = require("../helpers/convertToRp");
-const useridentity = require("../models/useridentity");
+const UserProfile = require("../models/useridentity");
 class HomeController{
     static home(req, res){
         let id = req.session.iduser
@@ -52,25 +52,25 @@ class HomeController{
             })
             .then((data) => {
                 purchased=data
-                return UserIdentity.findAll({
+                return UserProfile.findAll({
                     where: {
                         id: userid
                     }
                 })
             })
-            .then((useridentity) => {
-                console.log(useridentity);
-                res.render("courses", {data: output, convertToRupiah, role, userid, purchased: purchased, useridentity});
+            .then((userprofile) => {
+                console.log(userprofile);
+                res.render("courses", {data: output, convertToRupiah, role, userid, purchased: purchased, userprofile});
             })
             .catch(err => {
-                console.log(err, "eeee");
+                console.log(err);
                 res.render(err);
             })
     }
 
     static buy(req, res){
         const CourseId = req.params.id
-        User_Course.create({
+        UserCourse.create({
             CourseId: +CourseId,
             UserId: req.session.iduser
         })
@@ -103,8 +103,8 @@ class HomeController{
         .catch((err) => {
             let result = []
             if (err.name == "SequelizeValidationError") {
-            err.errors.forEach(x=>{
-                result.push(x.message)
+            err.errors.forEach(el=>{
+                result.push(el.message)
             })
             return res.redirect(`/home/courses/add?errors=${result}`)
             } else {
@@ -155,7 +155,6 @@ class HomeController{
             return res.redirect(`/home/courses/edit/${req.params.id}?errors=${result}`)
             } else {
                 res.send(err)
-
             }
         })
     }

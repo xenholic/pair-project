@@ -1,4 +1,4 @@
-const { UserIdentity, User } = require('../models')
+const { UserProfile, User } = require('../models')
 const bcrypt = require('bcryptjs')
 const nodemailer = require("nodemailer");
 
@@ -25,7 +25,7 @@ class Controller {
             password: password
         })
             .then(data => {
-                return UserIdentity.create({
+                return UserProfile.create({
                     firstName: firstName,
                     lastName: lastName,
                     dateOfBirth: dateOfBirth,
@@ -61,8 +61,8 @@ class Controller {
                 .catch(err => {
                 let result = []
                 if (err.name == "SequelizeValidationError") {
-                err.errors.forEach(x=>{
-                    result.push(x.message)
+                err.errors.forEach(el=>{
+                    result.push(el.message)
                 })
                 return res.redirect(`/register?errors=${result}`)
                 } else {
