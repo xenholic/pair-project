@@ -22,7 +22,6 @@ router.get("/courses/add", HomeController.addCourseForm);
 router.post("/courses/add", HomeController.addCourse);
 router.get("/courses/edit/:id", HomeController.editCourseForm);
 router.post("/courses/edit/:id", HomeController.editCourse);
-
 router.get("/courses/buy/:id", HomeController.buy);
 router.get("/courses/delete/:id", HomeController.delete);
 
