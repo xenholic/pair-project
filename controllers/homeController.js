@@ -2,6 +2,7 @@
 const { Op } = require("sequelize");
 const { User, Course, UserCourse, UserProfile } = require("../models");
 const formatRupiah = require("../helper/formatRP");
+
 class HomeController {
   static home(req, res) {
     let id = req.session.iduser;
@@ -54,7 +55,8 @@ class HomeController {
         });
       })
       .then((userprofile) => {
-        console.log(userprofile);
+        console.log(userprofile,"data user profile");
+        console.log(UserProfile,"data user profile");
         res.render("courses", { data: output, formatRupiah, role, userid, purchased: purchased, userprofile });
       })
       .catch((err) => {
