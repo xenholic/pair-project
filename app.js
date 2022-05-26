@@ -28,5 +28,5 @@ app.use("/register", require("./routes/register"))
 app.get('/logout', Controller.logOut)
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`this app listening on port ${port}`)
 })
