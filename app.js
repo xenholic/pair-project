@@ -16,7 +16,7 @@ app.use(session({
     sameSite: true 
   }
 }))
-// app.use("/register", require("./routes/register"))
+app.use("/register", require("./routes/register"))
 app.use("/", require("./routes/index"))
 app.use("/home", require("./routes/home"))
 
