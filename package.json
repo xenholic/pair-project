@@ -1,4 +1,23 @@
 {
+  "name": "pair-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xenholic/pair-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xenholic/pair-project/issues"
+  },
+  "homepage": "https://github.com/xenholic/pair-project#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "ejs": "^3.1.8",
