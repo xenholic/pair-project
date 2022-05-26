@@ -55,8 +55,6 @@ class HomeController {
         });
       })
       .then((userprofile) => {
-        console.log(userprofile,"data user profile");
-        console.log(UserProfile,"data user profile");
         res.render("courses", { data: output, formatRupiah, role, userid, purchased: purchased, userprofile });
       })
       .catch((err) => {

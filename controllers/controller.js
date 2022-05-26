@@ -19,6 +19,8 @@ class Controller {
 
     static postRegister(req, res) {
         // console.log(req.body);
+        let subscribe = req.body.subscribe
+        console.log(subscribe);
         const { email, password, dateOfBirth, gender, firstName, lastName } = req.body
         User.create({
             email: email,
@@ -45,16 +47,17 @@ class Controller {
                             from: 'watchus2022@gmail.com',
                             to: email,
                             subject: 'Thank you for subscribe',
-                            text: 'Subscribe is success!'
+                            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
                         };
-                        
-                        transporter.sendMail(mailOptions, function(error, info){
-                        if (error) {
-                            console.log(error);
-                        } else {
-                            console.log('Email sent: ' + info.response);
+                        if(subscribe){
+                            transporter.sendMail(mailOptions, function(error, info){
+                                if (error) {
+                                    console.log(error);
+                                } else {
+                                    console.log('Email sent: ' + info.response);
+                                }
+                                });
                         }
-                        });
                         res.redirect('/login')
                     })
             })

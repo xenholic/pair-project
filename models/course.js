@@ -15,6 +15,14 @@ module.exports = (sequelize, DataTypes) => {
         through: "UserCourses"
       })
     }
+
+    static deleteCourse(idCourse){
+      return Course.destroy({
+        where: {
+          id: idCourse
+        }
+      })
+    }
   }
   Course.init({
     name: {

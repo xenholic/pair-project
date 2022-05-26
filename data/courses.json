@@ -1,38 +1,38 @@
 [
     {
-        "name": "How To Read Course",
-        "imageURL": "https://images.unsplash.com/photo-1527176930608-09cb256ab504?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=874&q=80",
+        "name": "Expecto Patronum",
+        "imageURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxjkZ9hilzvUZWGUzCs6VmPepMs_d4Di4RjbuOeM-tZiJmJ8wXv0eghhc-7VIAx7_7b-M&usqp=CAU",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-        "price": 100000
+        "price": 1000000
     },
     {
-        "name": "Ninjutsu Course",
-        "imageURL": "https://images.unsplash.com/photo-1517594422361-5eeb8ae275a9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZmlyZXxlbnwwfHwwfHw%3D&w=1000&q=80",
+        "name": "Netrificus Totalus",
+        "imageURL": "https://static7.depositphotos.com/1050781/681/i/450/depositphotos_6819631-stock-photo-magic-book.jpg",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-        "price": 250000
+        "price": 2500000
     },
     {
-        "name": "Javascript Course",
-        "imageURL": "https://global-uploads.webflow.com/6100d0111a4ed76bc1b9fd54/6168131d88f0af474fd0bcf2_image-asset-4-1.jpeg",
+        "name": "Sectumsempra",
+        "imageURL": "https://static3.depositphotos.com/1005222/205/i/450/depositphotos_2052077-stock-photo-the-magic-book.jpg",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-        "price": 400000
+        "price": 4000000
     },
     {
-        "name": "Investment Course",
-        "imageURL": "https://blue.kumparan.com/image/upload/c_lpad,b_white,f_jpg,h_676,q_auto,w_1200/g_south,l_og_user_zprw89/co_rgb:ffffff,g_south_west,l_text:Heebo_20_bold:Konten%20dari%20Pengguna%0DBerita%20Hari%20Ini,x_140,y_26/kmzu8wqt2zjozirarix3.jpg",
+        "name": "Expelliarmus",
+        "imageURL": "https://s.kaskus.id/r480x480/images/fjb/2015/04/18/novel_harry_potter_hardcover__buku_pelajaran_sekolah_sihir_hogwarts_169409_1429340267.jpg",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-        "price": 30000
+        "price": 300000
     },
     {
-        "name": "English Course",
-        "imageURL": "https://dynaimage.cdn.cnn.com/cnn/c_fill,g_auto,w_1200,h_675,ar_16:9/https%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F220412085815-boris-johnson-0407.jpg",
+        "name": "Cruciatus Curse",
+        "imageURL": "http://asset-a.grid.id/crop/73x39:685x419/x/photo/2019/04/08/359464005.png",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-        "price": 89000
+        "price": 8900000
     },
     {
-        "name": "Cooking Course",
-        "imageURL": "https://img.mensxp.com/media/content/2021/Jul/Couple-Blasts-Gordon-Ramsay-For-Gatecrashing-Perfect-Beach-Wedding-With-TV-Crew-1400x653_60e40fdf447b3.jpeg",
+        "name": "Avada Kedavra",
+        "imageURL": "https://www.gramedia.com/blog/content/images/size/w600/2018/10/Review-Buku-harry-Potter-Cursed-Child.jpg",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-        "price": 150000
+        "price": 1500000
     }
 ]
