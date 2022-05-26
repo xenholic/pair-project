@@ -7,7 +7,7 @@ const formatRupiah = require("../helper/formatRP");
 class HomeController {
   static home(req, res) {
     let id = req.session.iduser;
-    res.render("home1", { id });
+    res.render("home", { id });
   }
 
   static coursesList(req, res) {
