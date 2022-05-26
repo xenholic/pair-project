@@ -66,6 +66,7 @@ class Controller {
                 })
                 return res.redirect(`/register?errors=${result}`)
                 } else {
+                  console.log(err)
                   return res.send(err)
 
                 }
