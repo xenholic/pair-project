@@ -20,7 +20,6 @@ class Controller {
     static postRegister(req, res) {
         // console.log(req.body);
         let subscribe = req.body.subscribe
-        console.log(subscribe);
         const { email, password, dateOfBirth, gender, firstName, lastName } = req.body
         User.create({
             email: email,

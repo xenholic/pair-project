@@ -1,5 +1,6 @@
 "use strict";
 const { Op } = require("sequelize");
+const nodemailer = require("nodemailer");
 const { User, Course, UserCourse, UserProfile } = require("../models");
 const formatRupiah = require("../helper/formatRP");
 
@@ -84,19 +85,49 @@ class HomeController {
 
   static addCourse(req, res) {
     const body = req.body;
+    let mailOptions
+    let transporter
     const { name, imageURL, description, price } = body;
-    console.log(body);
     Course.create({
       name: name,
       imageURL: imageURL,
       description: description,
       price: +price,
     })
-      .then(() => {
+
+    .then((dataUser)=> {
+        return User.findAll({
+            include: UserProfile
+        })
+    })
+      .then((data) => {
+           transporter = nodemailer.createTransport({
+                  service: 'gmail',
+                  auth: {
+                      user: 'watchus2022@gmail.com',
+                      pass: 'postgres123'
+                  }
+              });
+          data.forEach((el)=>{
+         mailOptions = {
+            from: 'watchus2022@gmail.com',
+            to: el.email,
+            subject: `Hello ${el.UserProfile.fullName} Check our new Product Now`,
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+        };
+        transporter.sendMail(mailOptions, function(error, info){
+            if (error) {
+                console.log(error);
+            } else {
+                console.log('Email sent: ' + info.response);
+            }
+            });
+    })
         res.redirect("/home/courses");
       })
       .catch((err) => {
         let result = [];
+        console.log(err);
         if (err.name == "SequelizeValidationError") {
           err.errors.forEach((el) => {
             result.push(el.message);
