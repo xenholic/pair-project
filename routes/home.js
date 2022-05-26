@@ -1,14 +1,13 @@
 "use strict"
-const HomeController = require("../controllers/homeController")
+const HomeController = require("../controllers/HomeController")
 const express = require("express");
 const router = express.Router();
 
 router.get("/", HomeController.home);
 
 router.use((req, res, next) => {
-    // console.log(req.session)
     if(!req.session.iduser){
-        let errors = 'Login dulu ya'
+        let errors = 'Silahkan login terlebih dahulu'
       return res.redirect(`/login?errors=${errors}`)
     } else {
       return next()
@@ -17,11 +16,12 @@ router.use((req, res, next) => {
 })
 
 
-router.get("/courses", Controller.courses);
-router.get("/courses/add", Controller.addCourse);
-router.post("/courses/add", HomeController.addToDB);
-router.get("/courses/edit/:id", HomeController.editPage);
-router.post("/courses/edit/:id", HomeController.editData);
+
+router.get("/courses", HomeController.coursesList);
+router.get("/courses/add", HomeController.addCourseForm);
+router.post("/courses/add", HomeController.addCourse);
+router.get("/courses/edit/:id", HomeController.editCourseForm);
+router.post("/courses/edit/:id", HomeController.editCourse);
 
 router.get("/courses/buy/:id", HomeController.buy);
 router.get("/courses/delete/:id", HomeController.delete);

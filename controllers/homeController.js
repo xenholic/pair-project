@@ -1,15 +1,14 @@
 "use strict"
 const { Op } = require("sequelize");
 const {User, Course, UserCourse, UserProfile} = require("../models")
-const convertToRupiah = require("../helpers/convertToRp");
-const UserProfile = require("../models/useridentity");
+const formatRupiah = require("../helper/formatRP");
 class HomeController{
     static home(req, res){
         let id = req.session.iduser
         res.render("home", {id});
     }
 
-    static courses(req, res){
+    static coursesList(req, res){
 
 
         let options = {
@@ -60,7 +59,7 @@ class HomeController{
             })
             .then((userprofile) => {
                 console.log(userprofile);
-                res.render("courses", {data: output, convertToRupiah, role, userid, purchased: purchased, userprofile});
+                res.render("courses", {data: output, formatRupiah, role, userid, purchased: purchased, userprofile});
             })
             .catch(err => {
                 console.log(err);
@@ -82,12 +81,12 @@ class HomeController{
         })
     }
 
-    static addCourse(req, res){
+    static addCourseForm(req, res){
         let errors = req.query.errors
         res.render("addPage", {errors});
     }
 
-    static addToDB(req, res){
+    static addCourse(req, res){
         const body = req.body;
         const {name, imageURL, description, price} = body
         console.log(body);
@@ -114,7 +113,7 @@ class HomeController{
         })
     }
 
-    static editPage(req, res){
+    static editCourseForm(req, res){
         const id = req.params.id
         Course.findAll({
             where: {id: +id}
@@ -128,7 +127,7 @@ class HomeController{
         })
     }
 
-    static editData(req, res){
+    static editCourse(req, res){
         const body = req.body;
         const {name, imageURL, description, price} = body
         console.log(body);

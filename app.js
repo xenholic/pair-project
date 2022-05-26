@@ -1,6 +1,6 @@
 const express = require('express')
 const session = require('express-session')
-const Controller = require('./controllers/index')
+const Controller = require('./controllers/controller')
 const app = express()
 const port = process.env.PORT ||3000
 
@@ -13,7 +13,7 @@ app.use(session({
   cookie: { 
     secure: false,
     sameSite: true 
-  } 
+  }
 }))
 app.use("/register", require("./routes/register"))
 app.use("/", require("./routes/index"))

@@ -11,13 +11,66 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Course.belongsTo(models.User, {
+        through: "UserCourses"
+      })
     }
   }
   Course.init({
-    name: DataTypes.STRING,
-    imageURL: DataTypes.TEXT,
-    description: DataTypes.TEXT,
-    price: DataTypes.INTEGER
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "Name is Required"
+        },
+        notNull: {
+          msg: "Name is Required"
+        }
+      }
+    },
+    imageURL: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "URL Required"
+        },
+        notNull: {
+          msg: "URL required"
+        },
+        isUrl: {
+          msg: "needs to be a url"
+        }
+      }
+    },
+    description: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "description Required"
+        },
+        notNull: {
+          msg: "description required"
+        }
+      }
+    },
+    price: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "Number Required"
+        },
+        notNull: {
+          msg: "Number required"
+        },
+        isNumeric: {
+          msg: "onput must be number"
+        }
+      }
+    },
   }, {
     sequelize,
     modelName: 'Course',

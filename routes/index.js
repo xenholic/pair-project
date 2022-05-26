@@ -1,5 +1,5 @@
 "use strict"
-const Controller = require('../controllers/index')
+const Controller = require('../controllers/controller')
 const express = require("express");
 const router = express.Router();
 

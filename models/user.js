@@ -11,15 +11,55 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      User.hasOne(models.UserProfile, {foreignKey: "UserId"})
+      User.belongsToMany(models.Course, { through: "UserCourses"})
     }
   }
   User.init({
-    email: DataTypes.STRING,
-    password: DataTypes.STRING,
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          args: true,
+          msg: 'E-mail is required'
+        },
+        isEmail: {
+          args: true,
+          msg: 'Fill e-mail with true format'
+        }
+      }
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          args: true,
+          msg: 'Password is required'
+        }
+      }
+    },
     role: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'User',
+    hooks: {
+      beforeCreate(instance, options) {
+        let kata = ""
+        var salt = bcrypt.genSaltSync(8);
+        var hash = bcrypt.hashSync(instance.password, salt);
+        instance.password = hash
+        kata = instance.email.split("@")[1]
+        kata = kata.split(".")[0]
+        if (kata == 'admin' || kata == 'Admin') {
+          instance.role = 1
+        } else {
+          instance.role = 2
+        }
+      }
+
+    }
   });
   return User;
 };

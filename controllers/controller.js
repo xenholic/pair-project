@@ -44,8 +44,8 @@ class Controller {
                         const mailOptions = {
                             from: 'watchus2022@gmail.com',
                             to: email,
-                            subject: 'Register',
-                            text: 'Register success!'
+                            subject: 'Thank you for subscribe',
+                            text: 'Subscribe is success!'
                         };
                         
                         transporter.sendMail(mailOptions, function(error, info){
