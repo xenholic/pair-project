@@ -4,8 +4,8 @@
   "description": "Pair Project Batch 24",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+    "start": "node app.js"
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/xenholic/pair-project.git"
@@ -31,4 +31,5 @@
     "npm": "^8.10.0",
     "sequelize-cli": "^6.4.1"
   }
+  
 }
