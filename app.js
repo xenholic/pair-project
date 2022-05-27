@@ -2,7 +2,7 @@ const express = require('express')
 const session = require('express-session')
 const Controller = require('./controllers/controller')
 const app = express()
-const port = process.env.PORT ||8000
+const port = process.env.PORT ||3000
 
 app.use(express.urlencoded({extended:true}))
 app.set('view engine','ejs')
