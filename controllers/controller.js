@@ -109,7 +109,7 @@ class Controller {
     }
 
 
-        static logOut(req,res){
+        static logOutSesi(req,res){
             req.session.destroy(err=>{
                 if(err){
                     res.send(err)

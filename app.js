@@ -9,7 +9,7 @@ app.set('view engine','ejs')
 
 app.use(session({
   secret: 'yang tau aja', //untuk mengamankan session kita (wajib ada)
-  resave: false, //untuk  tidak menyimpan perubahan email / uname dri user 
+  resave: false, //perubahan email / name dri user tidak di simpan
   saveUninitialized: false, 
   cookie: { 
     secure: false,
@@ -25,7 +25,7 @@ app.use("/login", require("./routes/login"))
 app.use("/logout", require("./routes/logout"))
 app.use("/register", require("./routes/register"))
 
-app.get('/logout', Controller.logOut)
+app.get('/logout', Controller.logOutSesi)
 
 app.listen(port, () => {
   console.log(`this app listening on port ${port}`)
