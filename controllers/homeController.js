@@ -3,11 +3,31 @@ const { Op } = require("sequelize");
 const nodemailer = require("nodemailer");
 const { User, Course, UserCourse, UserProfile } = require("../models");
 const formatRupiah = require("../helper/formatRP");
+const { options } = require("../routes");
 
 class HomeController {
   static home(req, res) {
     let id = req.session.iduser;
-    res.render("home", { id });
+    let option= {
+      where: {}
+    }
+    if(id){
+      option = {
+        where: {
+          id:id
+        }
+      }
+    }
+    UserProfile.findAll(option)
+    .then((dataUser)=>{
+      console.log(dataUser, "ini data user");
+      console.log(id, "ini id user");
+      res.render("home", { id, dataUser });
+    })
+    .catch((err)=>{
+      console.log(err);
+      res.send(err)
+    })
   }
 
   static coursesList(req, res) {
