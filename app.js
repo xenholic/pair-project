@@ -2,11 +2,10 @@ const express = require('express')
 const session = require('express-session')
 const Controller = require('./controllers/controller')
 const app = express()
-const port = process.env.PORT ||3000
+const port = process.env.PORT ||8000
 
 app.use(express.urlencoded({extended:true}))
 app.set('view engine','ejs')
-
 app.use(session({
   secret: 'yang tau aja', //untuk mengamankan session kita (wajib ada)
   resave: false, //perubahan email / name dri user tidak di simpan
