@@ -12,7 +12,7 @@
 
   <style>
   body {
-  background-image: url("/assets/tes.png");
+  background-image: url("../assets/magician.png");
    background-repeat: no-repeat;
    background-size:cover;
    background-color:rgb(48, 51, 51);
@@ -90,7 +90,7 @@
       </div>
     </div>
   </nav>
-  </nav> <br><br><br>
+  </nav> <br><br>
   <div class="container main">
     <h1 class="main text-light">Welcome! <%= userprofile[0].fullName%> </h1>
 </div>
@@ -105,11 +105,11 @@
       </form>
 </div>
 
-<main>
+<!-- <main> -->
   <!---ini contoh-->
-  <div class="row">
+  <div class="row justify-content-center">
     <% data.forEach(el => { %>
-    <div class="col-md-6">
+    <div class="col-md-6 mb-4">
         <div class="card" style="height: 100%">
           <img src="<%= el.imageURL %>"alt="" class="card-img-top" alt="art" style="width: 100%; height: 60%;">
           <div class="card-body">
